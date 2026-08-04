@@ -1,0 +1,91 @@
+// © Copyright 20/01/2023 Daniel Kenneth Bullimore
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+//@version=4
+
+study("Vortex Magnitude")
+ProfitShort = input(title="Mag One", type=input.float, defval=3, minval=0, maxval=100)
+ProfitMid    = input(title="Mag Ten", type=input.float, defval=3, minval=0, maxval=100)
+ProfitLong    = input(title="Mag Hundred", type=input.float, defval=15, minval=0, maxval=10000)
+
+//threesma = (timeframe.isminutes) ? sma(close, 1440 * int(timeframe.multiplier) / 3 ) : (timeframe.isdaily) ?  sma(close, 300) : sma(close, 3)
+//sixsma = (timeframe.isminutes) ? sma(close, 1440 * int(timeframe.multiplier) / 6 ) : (timeframe.isdaily) ? sma(close,600) : sma(close,6)
+//ninesma = (timeframe.isminutes) ? sma(close, 1440 * int(timeframe.multiplier) / 9 ) : (timeframe.isdaily) ? sma(close, 900) : sma(close, 9)
+//plot(  sma(close, 300) )
+//plot ( sma(close,600), color=color.teal )
+//plot(sma(close, 900), color=color.yellow )
+
+//plot(sma((close),90), title='ST6', style=(0), color=color.black, transp=0,  linewidth=2)
+ninetyspan =  (  (sma(close,600)-sma(close,900))  /  (sma(close,300)-sma(close,900))  *  100   )//what percent of wave height is 6
+//plot(ninetyspan)
+
+InVortex =  ninetyspan > ProfitLong - ProfitShort and ninetyspan < ProfitLong + ProfitShort 
+OutVortex = ninetyspan < (100 - (ProfitLong - ProfitShort)) and ninetyspan > (100 - (ProfitLong + ProfitShort))
+
+ninetybull = (InVortex and close > sma(close,600) and sma(close, 300) > sma(close,600) and sma(close,600) > sma(close, 900)) //ninetyspan > 75 and sixtynine < 63 and
+ninetybear = (OutVortex and close < sma(close,900) and close < open)
+
+ninetycolor= if (ninetybull)
+    color.new(#00ff00 , 50)
+else if (ninetybear)
+    color.new(#ff0000,50) 
+else 
+    color.new(#000000, 25)
+plot (27,  title='nintyOn', style=plot.style_circles,  color=ninetycolor, linewidth=20)//plot (sma(close,90),
+
+
+
+
+
+
+
+//plot(sma((close),60), title='ST3', style=(0), color=color.purple, transp=0,  linewidth=2)
+sixtyspan = sma(close,60) / sma(close, 90) * 100
+sixtybull = (sixtyspan > (100+ProfitMid) and close > sma(close, 30) and sma(close, 30) > sma(close,60) and sma(close,60) > sma(close, 90) ) //102
+sixtybear = (sixtyspan < (100-ProfitMid) and close < sma(close, 30) and sma(close, 30) < sma(close,60) and sma(close, 60) < sma(close, 90) ) //98
+sixtycolor = if (sixtybull)
+    color.new(#00ff00, 60)
+else if (sixtybear)
+    color.new(#ff0000,60) 
+else 
+    color.new(color.white, 100)
+plot(27,  title='sixtyOn', style=plot.style_circles,  color=sixtycolor, transp=25,  linewidth=10)  //plot(sma(close,60),
+
+
+
+
+
+
+//plot(sma((close),30), title='ST1', style=(0), color=color.blue, transp=0 , linewidth=2)
+thirtyspan = sma(close,3) / sma(close,6) * 100
+thirtybull = (thirtyspan >= (100 + ProfitShort) and close >= sma(close, 3) and sma(close, 3) > sma(close,6) and sma(close,6) > sma(close, 9) ) //102
+thirtybear = (thirtyspan <= (100 - ProfitShort) and close <= sma(close, 3) and sma(close, 3) < sma(close,6) and  sma(close,6) < sma(close, 9) )   //96
+thirtycolor = if  (thirtybull)
+    color.new(#00ff00, 0)
+else if (thirtybear)
+    color.new(#ff0000, 0)
+else 
+    color.new(#FF6600, 0)  
+plot(27,  title='thirtyOn', style=plot.style_circles,  color=thirtycolor, transp=0,  linewidth=3)//plot(sma(close,30),
+
+
+
+//plot((sma(volume,9) / volume * 100 ), title='ST3', style=(0), color=#00ff00, linewidth=1, transp=0)
+ninevolume = ((sma(volume,9) / volume * 100 ) < 35)
+//plotshape (ninevolume, title='NineVolt', style=shape.circle, location=location.top, color=color.blue, size=size.small)
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+//plotshape(buybear,  location=location.bottom , size=size.small,  style=shape.circle, color=#ff0000 )
+
+
+
+
