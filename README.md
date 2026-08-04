@@ -1,5 +1,5 @@
 # Vortex-Magnitude
-Trading View indicator written in pine script. Using vortex mathematics, shows where the market cycle is at, scale of potential change, and well just about everything you need to know. Built for bitcoin, slays most markets. I started writing Vortext Magnitude in 2020-22 after two years of research and analysis 2018-19, I had planed to publish it in 2023 (Yes i can prove that Ivan). I came back to publish yesterday only to find pine had upgrade to v6 so i had to translate between the two versions.
+Trading View indicator written in pine script. Using vortex mathematics, shows where the market cycle is at, scale of potential change, and well just about everything you need to know. Built for bitcoin, slays most markets. I started writing Vortext Magnitude in 2020-22 after two years of research and analysis 2018-19, I had planed to publish it in 2023 (Yes i can prove that Ivan <3 ). I came back to publish yesterday only to find pine had upgrade to v6 so i had to translate between the two versions.
 
 When all your dreams come true using this script, praise God, ask Jesus Christ to lead you, then and only then consider supporting the author's projects though his bitcoin address: 1PeBsK8RC1rrM2YcDauZD4XVBfiyaxzNts ; Or just reach out and tell me how you think I have ruined your life ;-) I'm all errors.
 
