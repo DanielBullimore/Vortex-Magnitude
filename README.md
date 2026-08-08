@@ -5,7 +5,7 @@ When all your dreams come true using this script, praise God, ask Jesus Christ t
 
 The following is not financial advise:
 This indicator works best on the daily charts. There is more information displayed than appears.
-Firstly the values menu in settings has three profit targets for three 4th dimension scopes each applied to a different magnitude of market change with in the vortex. Magnitude one controls the high frequency trigger, it is represented by the small red or green dot. Magnitude ten controls the core (medium) frequency trigger, it is represented by the larger red or green dot. Magnitude 100 represents the low frequency trigger it is represented by the large red or green dot. The small orange dot represents continuation on the high frequency.
+Firstly the inputs menu in settings has three profit targets for three 4th dimension scopes each applied to a different magnitude of market change with in the vortex. Magnitude one controls the high frequency trigger, it is represented by the small red or green dot. Magnitude ten controls the core (medium) frequency trigger, it is represented by the larger red or green dot. Magnitude 100 represents the low frequency trigger it is represented by the large red or green dot. The small orange dot represents continuation on the high frequency.
 The low frequency colour shows green for bull dominance and red for bear dominance. But with additional effect that when the low frequency vortex closes a strong top or bottom signal is present.
 The core frequency shows local market sentiment, bull/bear, but as the other frequency waves cross through the core frequency it can be used to scale entries, exits and tend strength. 
 The high frequency colour show favorable entry and exits, local tops local bottoms.
